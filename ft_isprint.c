@@ -6,7 +6,7 @@
 /*   By: bnaji <bnaji@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/26 16:58:48 by bnaji             #+#    #+#             */
-/*   Updated: 2021/10/02 11:15:15 by bnaji            ###   ########.fr       */
+/*   Updated: 2021/10/02 15:49:57 by bnaji            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ int ft_isprint (int n)
 	else 
 		return(0);
 }
-int main(){
-	printf("%d", isprint(126));
-	return (0);
-}
+// int main(){
+// 	printf("%                                                                                                                                                                              d", isprint(126));
+// 	return (0);
+// }

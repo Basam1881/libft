@@ -6,131 +6,125 @@
 /*   By: bnaji <bnaji@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/30 22:02:55 by bnaji             #+#    #+#             */
-/*   Updated: 2021/10/01 19:37:38 by bnaji            ###   ########.fr       */
+/*   Updated: 2021/10/03 01:56:01 by bnaji            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdlib.h>
 #include <stdio.h>
 #include "libft.h"
-// static void		ft_free_if_error(int nbr, char **res)
-// {
-// 	while (nbr >= 0)
-// 	{
-// 		if (res[nbr] != NULL)
-// 			free(res[nbr]);
-// 		nbr--;
-// 	}
-// 	free(res);
-// }
 
-// static int		ft_nbr_words(char const *s, char c)
-// {
-// 	int i;
-// 	int nbr;
 
-// 	i = 0;
-// 	nbr = 0;
-// 	while (s[i])
-// 	{
-// 		if (s[i] == c)
-// 			i++;
-// 		else
-// 		{
-// 			nbr++;
-// 			while (s[i] && s[i] != c)
-// 				i++;
-// 		}
-// 	}
-// 	return (nbr);
-// }
+static void	fill_strings(char **str, char* s, char c)
+{
+	int i;
+	int j;
+	int x;
 
-// static int		ft_allocate_words(char const *s, char **res, char c)
-// {
-// 	int i;
-// 	int nbr;
-// 	int size;
+	i = 0;
+	x = 0;
+	while (s[x])
+	{
+		if (s[x] == c)
+			x++;
+		else
+		{
+			j = 0;
+			while (s[x] && s[x] != c )
+			{
+				str[i][j] = s[x];
+				j++;
+				x++;
+			}
+			str[i][j] = 0;
+			i++;
+		}
+	}
+	str[i] = 0;
+}
 
-// 	i = 0;
-// 	nbr = 0;
-// 	while (s[i])
-// 	{
-// 		if (s[i] == c)
-// 			i++;
-// 		else
-// 		{
-// 			size = 0;
-// 			while (s[i] && s[i++] != c)
-// 				size++;
-// 			// res[nbr] = NULL;
-// 			if (!(res[nbr] = (char*)malloc(sizeof(*s) * size + 1)))
-// 			{
-// 				ft_free_if_error(nbr, res);
-// 				return (0);
-// 			}
-// 			nbr++;
-// 		}
-// 	}
-// 	return (1);
-// }
+static	int		allocte_strings(char **str, char *s,char c)
+{
+	int i;
+	int size;
+	int x;
+	
+	i = 0;
+	size = 0;
+	x = 0;
+	while (s[x])
+	{
+		if (s[x] == c)
+			x++;
+		else
+		{
+			size = 0;
+			while (s[x] && s[x++] != c)
+				size++;
+			if (!(str[i] = (char *)malloc(sizeof(char) * size + 1)))
+				return (0);
+			i++;
+		}
+	}
+	fill_strings(str, (char *)s, c);
+	return (1);
+}
 
-// static void		ft_fill_res(char const *s, char **res, char c)
-// {
-// 	int i;
-// 	int nbr;
-// 	int size;
 
-// 	i = 0;
-// 	nbr = 0;
-// 	while (s[i])
-// 	{
-// 		if (s[i] == c)
-// 			i++;
-// 		else
-// 		{
-// 			size = 0;
-// 			while (s[i] && s[i] != c)
-// 			{
-// 				res[nbr][size] = s[i];
-// 				size++;
-// 				i++;
-// 			}
-// 			res[nbr][size] = '\0';
-// 			nbr++;
-// 		}
-// 	}
-// }
 
-// char			**ft_split(char const *s, char c)
-// {
-// 	int		words;
-// 	char	**res;
+static int		word_counter(char *s, char c)
+{
+	int i;
+	int words;
 
-// 	if (!s || !c)
-// 	{
-// 		if (!(res = (char**)malloc(sizeof(char*))))
-// 			return (0);
-// 		res[0] = 0;
-// 		return (res);
-// 	}
-// 	words = ft_nbr_words(s, c);
-// 	if (!(res = (char**)malloc(sizeof(char*) * words + 1)))
-// 		return (0);
-// 	ft_allocate_words(s, res, c);
-// 	ft_fill_res(s, res, c);
-// 	res[words] = 0;
-// 	return (res);
-// }
+	i = 0;
+	words = 0;
+	while(s[i])
+	{
+		if (s[i] == c)
+			i++;
+		else
+		{
+			words++;
+			while (s[i] && s[i] != c)
+				i++;
+		}
+	}
+	return (words);
+}
+
+char **ft_split(char const *s, char c)
+{
+	char **str;
+	int words;
+	if (!s || !c)
+	{
+		if (!(str = (char **)malloc(sizeof(char *))))
+			return (0);
+		str[0] = 0;
+		return (str);
+	}
+	words = word_counter((char *)s, c);
+	if (!(str = (char **)malloc(sizeof(char *) * words + 1)))
+		return (0);
+	allocte_strings(str, (char *)s, c);
+	return(str);
+}
 
 
 // int				main(void)
 // {
 // 	char	**tab;
-// 	unsigned int	i;
+// 	int	i;
 
 // 	i = 0;
-// 	tab = ft_split("      split       this for   me  !", ' ');
-// 	printf("%s", tab[0]);
+// 	tab = ft_split("$split$$this$for$me$fgh", '$');
+// 	while (tab[i])
+// 	{
+// 		printf("%s\n", tab[i]);
+// 		i++;
+// 	}
+// 	printf("\n\n");
 // 	return (0);
 // }
 

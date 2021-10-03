@@ -6,7 +6,7 @@
 /*   By: bnaji <bnaji@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/26 17:00:38 by bnaji             #+#    #+#             */
-/*   Updated: 2021/10/01 18:42:31 by bnaji            ###   ########.fr       */
+/*   Updated: 2021/10/02 20:40:54 by bnaji            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,12 +34,12 @@ size_t ft_strlcat(char *dst, const char *src, size_t dstsize)
         return(dstlen +srclen);
     }
 }
-int main()
-{
-    char dst[50] = "This isk";
-    char src[30] = "a potentially long string";
-    int size = 12;
-    printf("Value returned: %lu\n",ft_strlcat(dst,src,size));
-    printf("dst: %s\n",dst);
-    return(0);
-}
+// int main()
+// {
+//     char dst[50] = "This isk";
+//     char src[30] = "a potentially long string";
+//     int size = 12;
+//     printf("Value returned: %lu\n",ft_strlcat(dst,src,size));
+//     printf("dst: %s\n",dst);
+//     return(0);
+// }

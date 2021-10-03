@@ -6,13 +6,13 @@
 /*   By: bnaji <bnaji@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/28 13:23:26 by bnaji             #+#    #+#             */
-/*   Updated: 2021/09/30 19:36:25 by bnaji            ###   ########.fr       */
+/*   Updated: 2021/10/03 03:05:56 by bnaji            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 #include <stdio.h>
-#include <string.h>
+// #include <string.h>
 
 char *ft_strchr(const char *s, int c)
 {

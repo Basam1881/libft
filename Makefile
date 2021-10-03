@@ -9,7 +9,6 @@ SRC_NAME = ft_atoi.c\
 		ft_isdigit.c\
 		ft_isprint.c\
 		ft_memchr.c\
-		ft_memchr.c\
 		ft_memcmp.c\
 		ft_memcpy.c\
 		ft_memmove.c\
@@ -47,7 +46,7 @@ NAME = libft.a
 all: ${NAME}
 
 ${NAME}: 
-	gcc -c $(CFLAG) $(SRC_NAME) -I$(HEADER)
+	gcc -c $(CFLAG) $(SRC_NAME)
 	ar -rc $(NAME) $(OBJ_NAME)
 	ranlib $(NAME)
 
