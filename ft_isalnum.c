@@ -6,14 +6,15 @@
 /*   By: bnaji <bnaji@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/26 16:58:14 by bnaji             #+#    #+#             */
-/*   Updated: 2021/09/30 21:30:17 by bnaji            ###   ########.fr       */
+/*   Updated: 2021/10/03 11:47:29 by bnaji            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-int ft_isalnum (int n)
+
+int	ft_isalnum(int n)
 {
 	if ((ft_isalpha(n) || ft_isdigit(n)))
-		return(1);
-	return(0);
+		return (1);
+	return (0);
 }

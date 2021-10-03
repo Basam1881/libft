@@ -6,16 +6,14 @@
 /*   By: bnaji <bnaji@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/26 16:58:31 by bnaji             #+#    #+#             */
-/*   Updated: 2021/10/02 11:15:01 by bnaji            ###   ########.fr       */
+/*   Updated: 2021/10/03 11:49:39 by bnaji            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-
-int ft_isascii (int n)
+int	ft_isascii(int n)
 {
 	if ((n >= 0 && n <= 127))
-		return(1);
-	else 
-	
-		return(0);
+		return (1);
+	else
+		return (0);
 }

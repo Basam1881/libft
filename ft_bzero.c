@@ -6,13 +6,11 @@
 /*   By: bnaji <bnaji@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/26 16:59:35 by bnaji             #+#    #+#             */
-/*   Updated: 2021/09/29 15:30:31 by bnaji            ###   ########.fr       */
+/*   Updated: 2021/10/03 11:45:02 by bnaji            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-
-#include <stdio.h>
-
+#include "libft.h"
 
 void	ft_bzero(void *s, size_t n)
 {
@@ -22,7 +20,7 @@ void	ft_bzero(void *s, size_t n)
 	while (n != 0)
 	{
 		*str = 0;
-        str++;
-        n--;
+		str++;
+		n--;
 	}
 }

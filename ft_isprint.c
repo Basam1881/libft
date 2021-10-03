@@ -6,20 +6,14 @@
 /*   By: bnaji <bnaji@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/26 16:58:48 by bnaji             #+#    #+#             */
-/*   Updated: 2021/10/02 15:49:57 by bnaji            ###   ########.fr       */
+/*   Updated: 2021/10/03 11:52:17 by bnaji            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include<ctype.h>
-#include<stdio.h>
-int ft_isprint (int n)
+int	ft_isprint(int n)
 {
 	if ((n >= 32 && n <= 126))
-		return(1);
-	else 
-		return(0);
+		return (1);
+	else
+		return (0);
 }
-// int main(){
-// 	printf("%                                                                                                                                                                              d", isprint(126));
-// 	return (0);
-// }

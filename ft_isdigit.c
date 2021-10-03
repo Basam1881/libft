@@ -6,15 +6,14 @@
 /*   By: bnaji <bnaji@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/26 16:56:49 by bnaji             #+#    #+#             */
-/*   Updated: 2021/09/29 16:37:35 by bnaji            ###   ########.fr       */
+/*   Updated: 2021/10/03 11:51:35 by bnaji            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-
-int ft_isdigit (int n)
+int	ft_isdigit(int n)
 {
 	if ((n >= '0' && n <= '9'))
-		return(1);
-	else 
-		return(0);
+		return (1);
+	else
+		return (0);
 }

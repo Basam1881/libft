@@ -6,34 +6,27 @@
 /*   By: bnaji <bnaji@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/28 15:14:12 by bnaji             #+#    #+#             */
-/*   Updated: 2021/09/29 10:27:02 by bnaji            ###   ########.fr       */
+/*   Updated: 2021/10/03 14:09:14 by bnaji            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void *ft_memchr(const void *s, int c, size_t n)
+void	*ft_memchr(const void *s, int c, size_t n)
 {
-    char *str;
+	char	*str;
 
-    str = (char *)s;
-    if (c == 0)
-        return ((char *)s + ft_strlen((char *)s));
-    else 
-    {
-        while (*str && n-- > 0)
-        {
-            if (c == *str)
-                return ((char *)str);
-            str++;
-        }
-        return (0);
-    }
+	str = (char *)s;
+	if (c == 0)
+		return ((char *)s + ft_strlen((char *)s));
+	else
+	{
+		while (*str && n-- > 0)
+		{
+			if (c == *str)
+				return ((char *)str);
+			str++;
+		}
+		return (0);
+	}
 }
-
-
-// int main(){
-//     char c[] = "HelloWorld";
-//     printf("%p\n%p\n\n", c, ft_memchr(c, 'l', 11));
-//     return (0);
-// }

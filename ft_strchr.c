@@ -6,33 +6,24 @@
 /*   By: bnaji <bnaji@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/28 13:23:26 by bnaji             #+#    #+#             */
-/*   Updated: 2021/10/03 03:05:56 by bnaji            ###   ########.fr       */
+/*   Updated: 2021/10/03 15:03:29 by bnaji            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <stdio.h>
-// #include <string.h>
 
-char *ft_strchr(const char *s, int c)
+char	*ft_strchr(const char *s, int c)
 {
-    if (c == 0)
-        return ((char *)s + strlen((char *)s));
-    else 
-    {
-        while (*s)
-        {
-            if (c == *s)
-                return ((char *)s);
-            s++;
-        }
-        return (0);
-    }
+	if (c == 0)
+		return ((char *)s + ft_strlen((char *)s));
+	else
+	{
+		while (*s)
+		{
+			if (c == *s)
+				return ((char *)s);
+			s++;
+		}
+		return (0);
+	}
 }
-
-
-// int main(){
-//     char c[] = "HelloWorld";
-//     printf("%p\n%p\n\n", c, ft_strchr(c,0));
-//     return (0);
-// }

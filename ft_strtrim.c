@@ -6,11 +6,10 @@
 /*   By: bnaji <bnaji@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/30 20:16:58 by bnaji             #+#    #+#             */
-/*   Updated: 2021/10/02 17:04:10 by bnaji            ###   ########.fr       */
+/*   Updated: 2021/10/03 14:40:20 by bnaji            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
 #include "libft.h"
 
 char	*ft_strtrim(char const *s1, char const *set)
@@ -33,36 +32,3 @@ char	*ft_strtrim(char const *s1, char const *set)
 	str = ft_substr(s1, start, end - start);
 	return (str);
 }
-
-// int main()
-// {
-// 	char s1[] = "HelloWorldCity";
-// 	char set[] = "Hyelt";
-// 	printf("%s", ft_strtrim(s1, set));
-// 	return (0);
-// }
-
-
-
-
-// char		*ft_strtrim(char const *s1, char const *set)
-// {
-// 	size_t	i;
-// 	size_t	len;
-// 	char	*str;
-
-// 	if (!s1 || !set)
-// 		return (NULL);
-// 	i = 0;
-// 	while (s1[i] != '\0' && ft_strchr(set, s1[i]))
-// 		i++;
-// 	len = ft_strlen((char *)s1 + i);
-// 	while (ft_strchr(set, s1[i + len]))
-// 		len--;
-// 	if (!(str = ft_substr(s1, i, len + 1)))
-// 		return (NULL);
-// 	return (str);
-// }
-
-
-

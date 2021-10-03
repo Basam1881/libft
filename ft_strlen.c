@@ -6,13 +6,13 @@
 /*   By: bnaji <bnaji@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/26 16:59:03 by bnaji             #+#    #+#             */
-/*   Updated: 2021/09/29 18:05:18 by bnaji            ###   ########.fr       */
+/*   Updated: 2021/10/03 14:29:31 by bnaji            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int		ft_strlen(char *str)
+int	ft_strlen(char *str)
 {
-	int n;
+	int	n;
 
 	n = 0;
 	while (*str)
