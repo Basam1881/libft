@@ -6,7 +6,7 @@
 /*   By: bnaji <bnaji@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/30 22:02:55 by bnaji             #+#    #+#             */
-/*   Updated: 2021/10/03 14:21:57 by bnaji            ###   ########.fr       */
+/*   Updated: 2021/10/03 16:42:12 by bnaji            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -95,13 +95,7 @@ char	**ft_split(char const *s, char c)
 	int		words;
 
 	if (!s || !c)
-	{
-		str = (char **)malloc(sizeof(char *));
-		if (!str)
-			return (0);
-		str[0] = 0;
-		return (str);
-	}
+		return (ft_calloc(1, 1));
 	words = word_counter((char *)s, c);
 	str = (char **)malloc(sizeof(char *) * words + 1);
 	if (!(str))
