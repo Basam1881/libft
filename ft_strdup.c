@@ -6,13 +6,13 @@
 /*   By: bnaji <bnaji@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/28 19:31:08 by bnaji             #+#    #+#             */
-/*   Updated: 2021/10/05 10:00:47 by bnaji            ###   ########.fr       */
+/*   Updated: 2021/10/07 15:54:41 by bnaji            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strdup(char *src)
+char	*ft_strdup(const char *src)
 {
 	int		i;
 	char	*dest;

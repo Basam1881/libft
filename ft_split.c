@@ -6,7 +6,7 @@
 /*   By: bnaji <bnaji@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/30 22:02:55 by bnaji             #+#    #+#             */
-/*   Updated: 2021/10/03 16:42:12 by bnaji            ###   ########.fr       */
+/*   Updated: 2021/10/07 18:24:36 by bnaji            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,6 +40,17 @@ static void	fill_strings(char **str, char*s, char c)
 	str[i] = 0;
 }
 
+static	void	ft_free(char **str, int n)
+{
+	while (n >= 0)
+	{
+		if (str[n] != NULL)
+			free(str[n]);
+		n--;
+	}
+	free(str);
+}
+
 static	int	allocte_strings(char **str, char *s, char c)
 {
 	int		i;
@@ -47,7 +58,6 @@ static	int	allocte_strings(char **str, char *s, char c)
 	int		x;
 
 	i = 0;
-	size = 0;
 	x = 0;
 	while (s[x])
 	{
@@ -60,11 +70,13 @@ static	int	allocte_strings(char **str, char *s, char c)
 				size++;
 			str[i] = (char *)malloc(sizeof(char) * size + 1);
 			if (!str[i])
+			{
+				ft_free (str, i);
 				return (0);
+			}
 			i++;
 		}
 	}
-	fill_strings(str, (char *)s, c);
 	return (1);
 }
 
@@ -94,12 +106,13 @@ char	**ft_split(char const *s, char c)
 	char	**str;
 	int		words;
 
-	if (!s || !c)
+	if (!s)
 		return (ft_calloc(1, 1));
 	words = word_counter((char *)s, c);
 	str = (char **)malloc(sizeof(char *) * words + 1);
 	if (!(str))
 		return (0);
 	allocte_strings(str, (char *)s, c);
+	fill_strings(str, (char *)s, c);
 	return (str);
 }

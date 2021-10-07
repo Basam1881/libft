@@ -6,19 +6,18 @@
 /*   By: bnaji <bnaji@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/26 16:59:03 by bnaji             #+#    #+#             */
-/*   Updated: 2021/10/05 09:56:29 by bnaji            ###   ########.fr       */
+/*   Updated: 2021/10/07 12:14:58 by bnaji            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_strlen(char *str)
+#include "libft.h"
+
+size_t	ft_strlen(const char *str)
 {
 	int	n;
 
 	n = 0;
-	while (*str)
-	{
-		str++;
+	while (str[n])
 		n++;
-	}
 	return (n);
 }

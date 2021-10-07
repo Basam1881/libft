@@ -6,7 +6,7 @@
 /*   By: bnaji <bnaji@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/02 22:41:32 by bnaji             #+#    #+#             */
-/*   Updated: 2021/10/05 16:52:10 by bnaji            ###   ########.fr       */
+/*   Updated: 2021/10/07 15:35:46 by bnaji            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -85,7 +85,8 @@ char	*ft_itoa(int n)
 		str = (char *)malloc(sizeof(char) + 1);
 		if (!str)
 			return (0);
-		*str = 48;
+		str[0] = '0';
+		str[1] = 0;
 	}
 	else if (n > 0)
 		str = is_positive(num, str);

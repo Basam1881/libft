@@ -6,7 +6,7 @@
 /*   By: bnaji <bnaji@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/28 13:23:31 by bnaji             #+#    #+#             */
-/*   Updated: 2021/10/03 14:39:25 by bnaji            ###   ########.fr       */
+/*   Updated: 2021/10/07 12:21:58 by bnaji            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ char	*ft_strrchr(const char *s, int c)
 		s = (char *)s + slen - 1;
 		while (slen-- > 0)
 		{
-			if (c == *s)
+			if ((unsigned char)c == *s)
 				return ((char *)s);
 			s--;
 		}

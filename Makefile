@@ -1,5 +1,4 @@
 
-# SRC_PATH = ./src/
 SRC_NAME = ft_atoi.c\
 		ft_bzero.c\
 		ft_calloc.c\
@@ -33,8 +32,9 @@ SRC_NAME = ft_atoi.c\
 		ft_putchar_fd.c\
 		ft_putstr_fd.c\
 		ft_putendl_fd.c\
-		ft_putnbr_fd.c\
-		ft_lstnew.c\
+		ft_putnbr_fd.c
+
+SRC_BONUS = ft_lstnew.c\
 		ft_lstadd_front.c\
 		ft_lstsize.c\
 		ft_lstlast.c\
@@ -46,24 +46,29 @@ SRC_NAME = ft_atoi.c\
 
 
 
-OBJ_NAME = $(SRC_NAME:.c=.o)
-# SRC = $(addprefix $(SRC_PATH), $(SRC_NAME))
+OBJ_NAME = $(SRC_NAME:.c=.o) 
+OBJ_BONUS = ${SRC_BONUS:.c=.o}
 HEADER = ./includes/
 CFLAG = -Wall -Wextra -Werror
 NAME = libft.a
 
+.PHONY: all clean fclean re bonus
+
 all: ${NAME}
 
-${NAME}: 
-	gcc -c $(CFLAG) $(SRC_NAME)
+${NAME}: ${OBJ_NAME}
+	gcc -c ${CFLAG} ${SRC_NAME}
 	ar -rc $(NAME) $(OBJ_NAME)
-	ranlib $(NAME)
 
-c:
-	gcc $(CFLAG)	ft_strtrim.c	ft_strlen.c	ft_strchr.c	ft_substr.c	ft_strdup.c
-	./a.out
+%.o: %.c
+	gcc ${CFLAG} -c $< -o ${<:%.c=%.o}
+
+bonus: ${NAME} ${OBJ_BONUS}
+	gcc -c ${CFLAG} ${SRC_BONUS}
+	ar -rc ${NAME} ${OBJ_NAME} ${OBJ_BONUS}
+
 clean:
-	rm -rf ${OBJ_NAME}
+	rm -rf ${OBJ_NAME} ${OBJ_BONUS}
 
 fclean: clean
 	rm -f ${NAME}

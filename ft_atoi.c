@@ -6,11 +6,11 @@
 /*   By: bnaji <bnaji@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/28 18:12:47 by bnaji             #+#    #+#             */
-/*   Updated: 2021/10/03 11:42:31 by bnaji            ###   ########.fr       */
+/*   Updated: 2021/10/07 15:40:33 by bnaji            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	check(unsigned int nb, int mult)
+static int	check(unsigned int nb, int mult)
 {
 	if (nb > 2147483647 && mult == 1)
 		return (-1);
@@ -20,25 +20,24 @@ int	check(unsigned int nb, int mult)
 	return (nb);
 }
 
-int	ft_atoi(char *str)
+int	ft_atoi(const char *str)
 {
 	int					i;
 	int					mult;
-	unsigned int		nb;
+	unsigned long		nb;
 
 	mult = 1;
 	nb = 0;
 	i = 0;
 	while (str[i] == ' ' || (str[i] >= 9 && str[i] <= 13))
 		i++;
-	if (str[i] == '-')
+	if (str[i] == '-' || str[i] == '+')
 	{
-		mult *= -1;
+		if (str[i] == '-')
+			mult *= -1;
 		i++;
 	}
-	if (str[i] == '+')
-		i++;
-	while (str[i] >= '0' && str[i] <= '9')
+	while (str[i] >= '0' && str[i] <= '9' && str[i] != 0)
 	{
 		nb = (nb * 10) + (str[i] - '0');
 		i++;
