@@ -6,13 +6,13 @@
 /*   By: bnaji <bnaji@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/30 22:02:55 by bnaji             #+#    #+#             */
-/*   Updated: 2021/10/07 18:24:36 by bnaji            ###   ########.fr       */
+/*   Updated: 2021/10/08 01:10:43 by bnaji            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static void	fill_strings(char **str, char*s, char c)
+static void	fill_strings(char **str, char *s, char c)
 {
 	int		i;
 	int		j;
@@ -40,7 +40,7 @@ static void	fill_strings(char **str, char*s, char c)
 	str[i] = 0;
 }
 
-static	void	ft_free(char **str, int n)
+static void	ft_free(char **str, int n)
 {
 	while (n >= 0)
 	{
@@ -51,7 +51,7 @@ static	void	ft_free(char **str, int n)
 	free(str);
 }
 
-static	int	allocte_strings(char **str, char *s, char c)
+static int	allocte_strings(char **str, char *s, char c)
 {
 	int		i;
 	int		size;
@@ -71,7 +71,7 @@ static	int	allocte_strings(char **str, char *s, char c)
 			str[i] = (char *)malloc(sizeof(char) * size + 1);
 			if (!str[i])
 			{
-				ft_free (str, i);
+				ft_free(str, i);
 				return (0);
 			}
 			i++;

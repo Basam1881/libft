@@ -6,7 +6,7 @@
 /*   By: bnaji <bnaji@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/28 17:33:12 by bnaji             #+#    #+#             */
-/*   Updated: 2021/10/03 14:17:43 by bnaji            ###   ########.fr       */
+/*   Updated: 2021/10/08 00:50:55 by bnaji            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,4 +26,4 @@ int	ft_memcmp(const void *s1, const void *s2, size_t n)
 	while (str[i] == str1[i] && i < n - 1)
 		i++;
 	return (str[i] - str1[i]);
-}	
+}

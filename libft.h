@@ -1,6 +1,17 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   libft.h                                            :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: bnaji <bnaji@student.42.fr>                +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2021/10/08 00:43:05 by bnaji             #+#    #+#             */
+/*   Updated: 2021/10/08 01:09:30 by bnaji            ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #ifndef LIBFT_H
 # define LIBFT_H
-
 # include <unistd.h>
 # include <stdlib.h>
 # include <stddef.h>
@@ -10,6 +21,7 @@ typedef struct s_list
 	void			*content;
 	struct s_list	*next;
 }				t_list;
+
 char	*ft_itoa(int n);
 int		ft_isalpha(int n);
 int		ft_isalnum(int n);

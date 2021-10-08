@@ -6,7 +6,7 @@
 /*   By: bnaji <bnaji@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/04 13:45:53 by bnaji             #+#    #+#             */
-/*   Updated: 2021/10/05 10:01:48 by bnaji            ###   ########.fr       */
+/*   Updated: 2021/10/08 00:47:01 by bnaji            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,8 +17,8 @@ void	ft_lstadd_front(t_list **lst, t_list *new)
 	if (!lst || !new)
 		return ;
 	if (!*lst)
-		new -> next = NULL;
+		new->next = NULL;
 	else
-		new -> next = *lst;
+		new->next = *lst;
 	*lst = new;
 }

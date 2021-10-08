@@ -6,7 +6,7 @@
 /*   By: bnaji <bnaji@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/02 22:41:32 by bnaji             #+#    #+#             */
-/*   Updated: 2021/10/07 15:35:46 by bnaji            ###   ########.fr       */
+/*   Updated: 2021/10/08 01:09:56 by bnaji            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,7 @@ static char	*is_positive(long n, char *str)
 	nb = n;
 	i = 0;
 	count = count_digits(nb);
-	str = (char *) malloc(sizeof(char) * (count + 1));
+	str = (char *)malloc(sizeof(char) * (count + 1));
 	if (!str)
 		return (0);
 	str[count] = 0;
@@ -79,7 +79,7 @@ char	*ft_itoa(int n)
 	long	num;
 
 	str = 0;
-	num = (long) n;
+	num = (long)n;
 	if (n == 0)
 	{
 		str = (char *)malloc(sizeof(char) + 1);
