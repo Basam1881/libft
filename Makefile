@@ -48,11 +48,10 @@ SRC_BONUS = ft_lstnew.c\
 
 OBJ_NAME = $(SRC_NAME:.c=.o) 
 OBJ_BONUS = ${SRC_BONUS:.c=.o}
-HEADER = ./includes/
 CFLAG = -Wall -Wextra -Werror
 NAME = libft.a
 
-.PHONY: all clean fclean re bonus
+.PHONY: all clean fclean re
 
 all: ${NAME}
 
