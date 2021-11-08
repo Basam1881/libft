@@ -6,7 +6,7 @@
 /*   By: bnaji <bnaji@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/02 22:41:32 by bnaji             #+#    #+#             */
-/*   Updated: 2021/10/08 01:09:56 by bnaji            ###   ########.fr       */
+/*   Updated: 2021/11/06 16:17:42 by bnaji            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,12 +34,12 @@ static char	*is_positive(long n, char *str)
 	nb = n;
 	i = 0;
 	count = count_digits(nb);
-	str = (char *)malloc(sizeof(char) * (count + 1));
+	str = (char *)malloc(sizeof(char) * count + 1);
 	if (!str)
 		return (0);
 	str[count] = 0;
 	nb = n;
-	while (count-- >= 0)
+	while (count-- > 0)
 	{
 		nb = n % 10;
 		n = n / 10;
@@ -58,7 +58,7 @@ static char	*is_negative(long n, char *str)
 	nb = n;
 	i = 0;
 	count = count_digits(nb);
-	str = (char *)malloc(sizeof(char) * (count + 2));
+	str = (char *)malloc(sizeof(char) * count + 2);
 	if (!str)
 		return (0);
 	str[count + 1] = 0;

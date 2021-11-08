@@ -6,11 +6,13 @@
 /*   By: bnaji <bnaji@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/28 19:31:20 by bnaji             #+#    #+#             */
-/*   Updated: 2021/10/03 15:03:58 by bnaji            ###   ########.fr       */
+/*   Updated: 2021/11/02 10:42:14 by bnaji            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+
+void	ft_bzero(void *s, size_t n);
 
 void	*ft_calloc(size_t count, size_t size)
 {
